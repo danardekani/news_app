@@ -16,3 +16,9 @@ func main()  {
 		port = "3000"
 	}
 }
+
+//Create new HTTP request
+mux := http.NewServeMux()
+
+mux.HandleFunc("/", webHandler)
+http.ListenAndServe(":" +port, mux)
